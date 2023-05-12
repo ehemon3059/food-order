@@ -35,7 +35,95 @@
 
 	<script src="https://yui-s.yahooapis.com/3.18.1/build/yui/yui-min.js"></script> -->
 
+    <style>
 
+        
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  option {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  option:hover {
+    background-color: #f2f2f2;
+  }
+
+
+  
+        .services-container {
+	
+			display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 35px;
+			justify-content: space-between;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 50px 20px;
+
+		}
+
+		.service {
+			flex-basis: calc(25% - 20px);
+			margin-bottom: 40px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		.service img {
+			max-width: 100%;
+			margin-bottom: 50px;
+		}
+
+		.service h2 {
+			font-size: 24px;
+			margin-bottom: 20px;
+			margin-top:  45px;
+		}
+
+
+
+
+		.image-container {
+		position: relative;
+		/* width: 300px;
+		height: 200px; */
+		overflow: hidden;
+		}
+
+		.image-container img {
+		display: block;
+		width: 100%;
+		height: auto;
+		transition: transform 0.3s ease-out;
+		}
+
+		.image-container:hover img {
+		transform: scale(1.2);
+		}
+
+		@media screen and (max-width: 576px) {
+					.services-container{
+						grid-template-columns: repeat(1,1fr);
+					}
+					
+        }@media screen and (min-width:577px) and (max-width:992px) {
+            .services-container{
+                 grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+    </style>
 
 </head>
 
@@ -59,6 +147,9 @@
                     </li>
                     <li>
                         <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo SITEURL; ?>service_area.php">Service Area</a>
                     </li>
 
                     <?php

@@ -167,14 +167,17 @@
                     //Query Executed and Category Added
                     $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
                     //Redirect to Manage Category Page
-                    header('location:'.SITEURL.'admin/manage-category.php');
+                 //   header('location:'.SITEURL.'admin/manage-category.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-category.php' </script>";
                 }
                 else
                 {
                     //Failed to Add CAtegory
                     $_SESSION['add'] = "<div class='error'>Failed to Add Category.</div>";
                     //Redirect to Manage Category Page
-                    header('location:'.SITEURL.'admin/add-category.php');
+                  //  header('location:'.SITEURL.'admin/add-category.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/add-category.php' </script>";
+                    
                 }
             }
         

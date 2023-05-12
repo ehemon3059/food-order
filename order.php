@@ -99,6 +99,31 @@ include('partials-front/check-login.php');
                     <div class="order-label">Email</div>
                     <input type="email" name="email" placeholder="example@email.com" class="input-responsive" required>
 
+
+                    <div class="order-label">Select Location</div>
+
+                    <?php
+
+                    // Query the database
+                        $sql = "SELECT * FROM `service_area`";
+                        $result = mysqli_query($conn, $sql);
+
+                        // Create the select option element
+                        echo "<select name='options' required  >";
+                        
+                         echo   "<option >Select an option</option>";
+                        // Loop through the query results and add each option to the select element
+                        while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='" . $row['area_name'] . "'>" . $row['area_name'] . "</option>";
+                        }
+
+                        // Close the select element
+                        echo "</select>";
+                        ?>
+
+
+	
+
                     <div class="order-label">Address</div>
                     <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
 
@@ -128,11 +153,12 @@ include('partials-front/check-login.php');
                     $customer_contact = $_POST['contact'];
                     $customer_email = $_POST['email'];
                     $customer_address = $_POST['address'];
+                    $our_location = $_POST['options'];
 
 
                     //Save the Order in Databaase
                     //Create SQL to save the data
-                 print   $sql2 = "INSERT INTO tbl_order SET 
+                    $sql2 = "INSERT INTO tbl_order SET 
                         food = '$food',
                         price = $price,
                         qty = $qty,
@@ -144,8 +170,14 @@ include('partials-front/check-login.php');
                         customer_email = '$customer_email',
                         customer_address = '$customer_address',
                         order_from = '$order_from',
-                        who_updated = 'no_one'
+                        who_updated = 'no_one',
+                        our_location = '$our_location'
                     ";
+
+                    if($our_location == 'Select an option'){
+                        echo '<script>alert("please select our location")</script>'; die();
+                    }
+
 
                    // echo $sql2; die();
 
@@ -153,8 +185,11 @@ include('partials-front/check-login.php');
                     $res2 = mysqli_query($conn, $sql2);
 
                     //Check whether query executed successfully or not
-                    if($res2==true)
+                    if($res2==true )
                     {
+
+
+
                         //Query Executed and Order Saved
                         $_SESSION['order-status'] = "<div class='success text-center'>Food Ordered Successfully.</div>";
                         echo '<script>alert("your order was confirmed . please check your order status on our website.")</script>';

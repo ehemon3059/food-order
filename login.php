@@ -64,14 +64,14 @@
             $password = mysqli_real_escape_string($conn, $cus_password);
 
             //2. SQL to check whether the user with username and password exists or not
-          print  $sql = "SELECT * FROM `customer_info` WHERE `cus_email`='$cus_email' AND `cus_password`='$password'";
+            $sql = "SELECT * FROM `customer_info` WHERE `cus_email`='$cus_email' AND `cus_password`='$password'";
 
 
             //3. Execute Query 
             $res = mysqli_query($conn, $sql);
 
             //4. Count rows to check whether the user exists or not
-            echo   $count = mysqli_num_rows($res);
+               $count = mysqli_num_rows($res);
 
 
 
@@ -83,7 +83,8 @@
                 $_SESSION['user-email'] = $cus_email; //TO check whether the user is logged in or not and logout will unset it
 
                 //REdirect to HOme Page/Dashboard
-                header('location:' . SITEURL . 'order.php/');
+              //  header('location:' . SITEURL . 'order.php/');
+                echo "<script> window.location.href = 'http://localhost/food-order/' </script>";
             } else {
                 //User not Available and Login FAil
                 $_SESSION['login-unsuccess'] =  "<div class=' text-center' style='color:red;'>Username or Password did not match.</div>";
@@ -91,7 +92,8 @@
                  
                 
                 //REdirect to HOme Page/Dashboard
-                header('location:' . SITEURL . 'login.php');
+              //  header('location:' . SITEURL . 'login.php');
+                echo "<script> window.location.href = 'http://localhost/food-order/login.php' </script>";
             }
         }
 

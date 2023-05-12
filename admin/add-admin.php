@@ -96,7 +96,8 @@
         // User already exists
 
         $_SESSION['add'] = "<div class='error'>User already exists with this username.</div>";
-        header("location:" . SITEURL . 'admin/add-admin.php');
+       // header("location:" . SITEURL . 'admin/add-admin.php');
+        echo "<script> window.location.href = 'http://localhost/food-order/admin/add-admin.php' </script>";
         } else {
 
             // User does not exist
@@ -118,16 +119,18 @@
                 //Data Inserted
                 //echo "Data Inserted";
                 //Create a Session Variable to Display Message
-                $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
+                $_SESSION['add'] = "<div class='success'>User Added Successfully.</div>";
                 //Redirect Page to Manage Admin
-                header("location:" . SITEURL .'admin/manage-admin.php');
+              //  header("location:" . SITEURL .'admin/manage-admin.php');
+                echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-admin.php' </script>";
             } else {
                 //FAiled to Insert DAta
                 //echo "Faile to Insert Data";
                 //Create a Session Variable to Display Message
-                $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
+                $_SESSION['add'] = "<div class='error'>Failed to Add User.</div>";
                 //Redirect Page to Add Admin
-                header("location:" . SITEURL .'admin/add-admin.php');
+              //  header("location:" . SITEURL .'admin/add-admin.php');
+                echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-admin.php' </script>";
             }
 
         }

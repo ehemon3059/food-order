@@ -147,7 +147,7 @@ $res = mysqli_query($conn,$query);
 
 
 				<?php
-				if($position == 'regular staff' or $position == 'owner'){
+				if($position == 'regular staff'){
 					?>
                 	<li><a href="manage-ordered.php">Ordered</a></li>
 				<?php
@@ -157,7 +157,7 @@ $res = mysqli_query($conn,$query);
 
 
 				<?php
-				if($position == 'regular staff' or $position == 'owner' or   $position == 'delivery man'){
+				if($position == 'regular staff'  or   $position == 'delivery man'){
 					?>
                 	<li><a href="manage-all-on-delivery.php">On-Delivery</a></li>
 				<?php
@@ -166,7 +166,7 @@ $res = mysqli_query($conn,$query);
 
 
 				<?php
-				if($position == 'regular staff' or $position == 'owner'){
+				if($position == 'regular staff' ){
 					?>
                 	 <li><a href="manage-all-delivered.php">Delivered</a></li>
 				<?php
@@ -176,7 +176,7 @@ $res = mysqli_query($conn,$query);
 
 
 				<?php
-				if($position == 'regular staff' or $position == 'owner'){
+				if($position == 'regular staff'){
 					?>
                 	 <li><a href="manage-all-cancelled.php">Cancelled</a></li>
 				<?php
@@ -192,6 +192,15 @@ $res = mysqli_query($conn,$query);
 				if($position == 'manager' or $position == 'owner'){
 					?>
                 	<li><a href="message.php">Message</a></li>
+				<?php
+				}
+				?>
+
+
+				<?php
+				if( $position == 'owner'){
+					?>
+                	<li><a href="service_area.php">service area</a></li>
 				<?php
 				}
 				?>

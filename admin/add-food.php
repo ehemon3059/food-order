@@ -232,13 +232,15 @@
                 {
                     //Data inserted Successfullly
                     $_SESSION['add'] = "<div class='success'>Food Added Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
+                  //  @header('location:'.SITEURL.'admin/manage-food.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-food.php' </script>";
                 }
                 else
                 {
                     //FAiled to Insert Data
                     $_SESSION['add'] = "<div class='error'>Failed to Add Food.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
+                  //  header('location:'.SITEURL.'admin/manage-food.php');
+                  echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-food.php' </script>";
                 }
 
                 

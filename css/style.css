@@ -226,6 +226,8 @@ text-align: center;
 
 
 
+
+
 /* CSS for Mobile Size or Smaller Screen */
 
 @media only screen and (max-width:768px){
@@ -280,4 +282,6 @@ text-align: center;
     .order{
         width: 100%;
     }
+
+    
 }

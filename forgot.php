@@ -119,7 +119,7 @@ include_once("smtp_stable/class.smtp.php");
               echo "<script> window.location.href = 'http://localhost/food-order/forgot.php' </script>";
             } else {
                 //User not Available and Login FAil
-                $_SESSION['message-user'] = "<div class='error text-center'>Email did not match.</div>";
+                $_SESSION['message-user'] = "<div class='error text-center'>Email did not found.</div>";
                 //REdirect to HOme Page/Dashboard
                // header('location:' . SITEURL . 'forgot.php');
                echo "<script> window.location.href = 'http://localhost/food-order/forgot.php' </script>";

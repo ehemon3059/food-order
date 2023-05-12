@@ -37,14 +37,17 @@
                 {
                     //redirect to manage category with session message
                     $_SESSION['no-category-found'] = "<div class='error'>Category not Found.</div>";
-                    header('location:'.SITEURL.'admin/manage-category.php');
+                   // header('location:'.SITEURL.'admin/manage-category.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-category.php' </script>";
+                    
                 }
 
             }
             else
             {
                 //redirect to Manage CAtegory
-                header('location:'.SITEURL.'admin/manage-category.php');
+               // header('location:'.SITEURL.'admin/manage-category.php');
+                echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-category.php' </script>";
             }
         
         ?>
@@ -217,13 +220,15 @@
                 {
                     //Category Updated
                     $_SESSION['update'] = "<div class='success'>Category Updated Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-category.php');
+                   // header('location:'.SITEURL.'admin/manage-category.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-category.php' </script>";
                 }
                 else
                 {
                     //failed to update category
                     $_SESSION['update'] = "<div class='error'>Failed to Update Category.</div>";
-                    header('location:'.SITEURL.'admin/manage-category.php');
+                  // header('location:'.SITEURL.'admin/manage-category.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-category.php' </script>";
                 }
 
             }
