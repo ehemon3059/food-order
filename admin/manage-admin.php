@@ -4,7 +4,7 @@
         <!-- Main Content Section Starts -->
         <div class="main-content">
             <div class="wrapper">
-                <h1>Manage Admin</h1>
+                <h1>Manage Employee</h1>
 
                 <br />
 
@@ -49,7 +49,7 @@
                 <br><br><br>
 
                 <!-- Button to Add Admin -->
-                <a href="add-admin.php" class="btn-primary">Add Admin</a>
+                <a href="add-admin.php" class="btn-primary">Add Employee</a>
 
                 <br /><br /><br />
 

@@ -98,6 +98,104 @@ $res = mysqli_query($conn,$query);
 		input[type="submit"]:hover {
 			background-color: #3e8e41;
 		}
+		.img-responsive{
+			width: 6%;
+		}
+
+
+		/* footer css start  */
+		.custom-footer {
+
+height: 28rem;
+width: 100%;
+background-color: #5256A5;
+clear: both;
+
+}
+.address-text {
+padding-top: 50px;
+text-align: center;
+color: white;
+display: flex;
+flex-direction: column;
+}
+.address-text p{
+text-align:center;
+color:white;
+font-size:1rem;
+letter-spacing: 2px;
+line-height: 1.5;
+}
+.company-socal-links {
+margin: 10px;
+padding: 20px;
+font-size: 40px;
+color: white !important;
+text-decoration: none;
+cursor: pointer;
+}
+.social-links {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.socail-link {
+margin: 10px;
+padding: 20px;
+font-size: 25px;
+color: white;
+text-decoration: none;
+cursor: pointer;
+
+}
+.fa-facebook:hover {
+color: #ff09be;
+-o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
+}
+.fa-linkedin:hover{
+color: #ff09be;
+-o-transition:.3s;
+-ms-transition:.3s;
+-moz-transition:.3s;
+-webkit-transition:.3s;
+transition:.3s;
+}
+.fa-youtube:hover{
+color: #ff09be;
+-o-transition:.3s;
+-ms-transition:.3s;
+-moz-transition:.3s;
+-webkit-transition:.3s;
+transition:.3s;
+}
+.fa-instagram:hover{
+color: #ff09be;
+-o-transition:.3s;
+-ms-transition:.3s;
+-moz-transition:.3s;
+-webkit-transition:.3s;
+transition:.3s;
+}
+.footer-logo-responsive{
+width: 12%;
+height: auto;
+}
+.copy-right-text{
+text-align:center;
+color:white;
+letter-spacing: 3px;
+
+
+}
+.copy-right-text a{
+color : #3FFC90;
+}
+
+/* footer css end  */
     </style>
 
 </head>
@@ -106,12 +204,20 @@ $res = mysqli_query($conn,$query);
     <!-- Menu Section Starts -->
     <div class="menu text-center">
         <div class="wrapper">
+			
             <ul>
+				<li>
+						
+						<a href="http://localhost/food-order/" title="Logo">
+							<img src="../images/Rapido-Logo.png" alt="Restaurant Logo" class="img-responsive">
+						</a>
+					
+				</li>
                 <li><a href="index.php">Home</a></li>
                 <?php
                 if ($position == 'owner') {
                 ?>
-                    <li><a href="manage-admin.php">Admin</a></li>
+                    <li><a href="manage-admin.php">Employee</a></li>
                 <?php
                 }
 

@@ -60,7 +60,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Category" class="btn-secondary">
+                        <input type="submit" name="evan" value="Add Category" class="btn-secondary">
                     </td>
                 </tr>
 
@@ -72,7 +72,7 @@
         <?php 
         
             //CHeck whether the Submit Button is Clicked or Not
-            if(isset($_POST['submit']))
+            if(isset($_POST['evan']))
             {
                 //echo "Clicked";
 

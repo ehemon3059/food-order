@@ -1,7 +1,7 @@
 <?php include('partials-front/menu.php');
 
 
-print $order_user = $_SESSION['user-email'];
+ $order_user = $_SESSION['user-email'];
 ?>
 
 

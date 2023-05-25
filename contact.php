@@ -62,6 +62,7 @@
                
                     `mobile_num`='$mobile',
                     `from_customer`='$from_customer',
+                    `status`='No reply',
                     `message`='$cus_message'";
 
                     //echo $sql2; die();

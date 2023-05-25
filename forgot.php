@@ -1,4 +1,6 @@
-<?php include('partials-front/menu.php');
+<?php  include('config/constants.php');
+ print @$order_user =  $_SESSION['user-email'];
+
 
 include_once("smtp_stable/class.phpmailer.php");
 include_once("smtp_stable/class.smtp.php");
@@ -8,41 +10,7 @@ include_once("smtp_stable/class.smtp.php");
 ?>
 
 
-<section class="food-search">
-    <div class="container">
-
-        <h2 class="text-center text-white">Forgot Password </h2>
-
-        <form action="" method="POST" class="order">
-
-
-            <fieldset>
-                <legend>fill the information</legend>
-                <div class="order-label">Email</div>
-                <input type="text" name="cus_email" placeholder="Enter Your Email" class="input-responsive" required>
-
-
-
-
-                <?php
-                if (isset($_SESSION['message-user'])) {
-                    echo $_SESSION['message-user'];
-                    unset($_SESSION['message-user']);
-                }
-
-                
-                ?>
-
-                <input type="submit" name="submit" value="Reset Password" class="btn btn-primary">
-
-
-                <div class="signup-link">Not a member ? <a class="signup-link" href="<?php echo SITEURL; ?>signup.php">Signup</a></div>
-            </fieldset>
-
-
-        </form>
-
-        <?php
+<?php
 
         //CHeck whether submit button is clicked or not
         if (isset($_POST['submit'])) {
@@ -128,7 +96,102 @@ include_once("smtp_stable/class.smtp.php");
 
         ?>
 
-    </div>
-</section>
+<!doctype html>
+<html lang="en">
 
-<?php include('partials-front/footer.php'); ?>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <style>
+            .text-color{
+                color: #597bf6;
+                 padding-top: 10px;
+                padding-bottom: 10px;
+            }    
+            .container {         
+            height: 100vh;
+            display: flex;
+            align-items: center;        
+            }
+            .total-card{
+                border: 1px solid #A0B2FA;
+                border-radius: 10px ;
+            }    
+            
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center  total-card shadow">
+
+            
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                <h2 class="my-3 text-color">Forgot Password</h2>
+                <form method="POST">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" name="cus_email" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <!-- <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    
+                    <select class="form-select mb-3" aria-label="Default select example">
+                        <option selected>Please select one</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Secret</option>
+                    </select> -->
+                    
+                    <!-- <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Accept our <a href="#">Terms And Conditions</a>
+                        </label>
+                    </div> -->
+
+                    
+                <?php
+                if (isset($_SESSION['message-user'])) {
+                    echo $_SESSION['message-user'];
+                    unset($_SESSION['message-user']);
+                }
+
+                
+                ?>
+                    <input type="submit" class="btn btn-primary mb-3" name="submit" value="Reset Password">
+
+                    <div class="form-check">
+                        <label class="form-check-label" for="flexCheckDefault">Not a member ? <a href="<?php echo SITEURL; ?>signup.php" class="text-decoration-none">Sign Up</a>
+                        </label>
+                    </div>
+                </form>
+
+                
+
+            </div>
+            <div class="col-md-6 my-image ">
+                <img class="img-fluid " src="/food-order/images/forgot.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!-- Created by Eh.Emon -->
+

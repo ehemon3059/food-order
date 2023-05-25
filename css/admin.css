@@ -86,6 +86,8 @@ table tr td{
 /* CSS for Menu */
 .menu{
     border-bottom: 1px solid grey;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .menu ul{
     list-style-type: none;
@@ -97,10 +99,10 @@ table tr td{
 .menu ul li a{
     text-decoration: none;
     font-weight: bold;
-    color: #ff6b81;
+    color: #5379f8
 }
 .menu ul li a:hover{
-    color: #ff4757;
+    color: #1a02a3;
 }
 
 /* CSS for main-content */

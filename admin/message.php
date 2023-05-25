@@ -42,7 +42,7 @@
                     
                             <?php 
                                 //Query to Get all Admin
-                                $sql = "SELECT * FROM `contact_us` ORDER BY `id` DESC;";
+                                $sql = "SELECT * FROM `contact_us`  WHERE `status`='No reply' ORDER BY `id` DESC";
 
                                 // $sql or die();
                                 //Execute the Query
@@ -92,7 +92,7 @@
                                         }
 
                                     }else{
-                                        echo "<tr><td colspan='12' class='error'>Orders not Available</td></tr>";
+                                        echo "<tr><td colspan='12' class='error text-center' style='text-align: center; font-size:25px;'>Message not Available</td></tr>";
                                     }
                                 }
 

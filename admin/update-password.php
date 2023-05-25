@@ -2,7 +2,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Change Password</h1>
+        <h1>Change Admin Password</h1>
         <br><br>
 
         <?php 
@@ -99,7 +99,9 @@
                                 //REdirect to Manage Admin Page with Success Message
                                 $_SESSION['change-pwd'] = "<div class='success'>Password Changed Successfully. </div>";
                                 //Redirect the User
-                                header('location:'.SITEURL.'admin/manage-admin.php');
+                              //  header('location:'.SITEURL.'admin/manage-admin.php');
+                              echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-admin.php' </script>";
+
                             }
                             else
                             {
@@ -107,24 +109,25 @@
                                 //REdirect to Manage Admin Page with Error Message
                                 $_SESSION['change-pwd'] = "<div class='error'>Failed to Change Password. </div>";
                                 //Redirect the User
-                                header('location:'.SITEURL.'admin/manage-admin.php');
+                              //  header('location:'.SITEURL.'admin/manage-admin.php');
+                              echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-admin.php' </script>";
                             }
-                        }
-                        else
+                        }else
                         {
                             //REdirect to Manage Admin Page with Error Message
                             $_SESSION['pwd-not-match'] = "<div class='error'>Password and confirm password does not match</div>";
                             //Redirect the User
-                            header('location:'.SITEURL.'admin/manage-admin.php');
+                            //header('location:'.SITEURL.'admin/manage-admin.php');
+                            echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-admin.php' </script>";
 
                         }
-                    }
-                    else
+                    }else
                     {
                         //User Does not Exist Set Message and REdirect
                         $_SESSION['user-not-found'] = "<div class='error'>User Not Found. </div>";
                         //Redirect the User
-                        header('location:'.SITEURL.'admin/manage-admin.php');
+                       // header('location:'.SITEURL.'admin/manage-admin.php');
+                       echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-admin.php' </script>";
                     }
                 }
 

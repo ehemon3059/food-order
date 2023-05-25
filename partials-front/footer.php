@@ -1,29 +1,45 @@
-<!-- social Section Starts Here -->
-<section class="social">
-    <div class="container text-center">
-        <ul>
-            <li>
-                <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
-            </li>
-            <li>
-                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
-            </li>
-            <li>
-                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
-            </li>
-        </ul>
-    </div>
-</section>
-<!-- social Section Ends Here -->
 
-<!-- footer Section Starts Here -->
-<section class="footer">
-    <div class="container text-center">
-        <p>©<span id="year"></span> All rights reserved. Designed By <a href="#">Emon,Nazmul,sohel,Ibrahim Hossain</a></p>
-    </div>
-</section>
-<!-- footer Section Ends Here -->
 
+<footer>
+        <section>
+            <div class="custom-footer">
+                <div class="address-text">
+                   
+                    <a href="http://localhost/food-order/" title="Logo">
+                    <img src="http://localhost/food-order/images/footer-logo.png" alt="Restaurant Logo" class="footer-logo-responsive">
+                </a>
+                    <p> Holding 190, Road 5, Block J</p>
+                    <p>Baridhara, Maddha,</p>
+                    <p>Naya Nagar Rd, Dhaka 1212</p>
+                </div>
+                <div class="company-socal-links">
+                    <div class="social-links">
+                        <p><b><a href="https://www.facebook.com/" target="_blank" class="socail-link"><i
+                                        class="fa-brands fa-facebook"></i></a></b></p>
+                        <p><b><a href="https://www.linkedin.com/" target="_blank" class="socail-link"><i
+                                        class="fa-brands fa-linkedin"></i></a></b></p>
+                        <p><b><a href="https://www.youtube.com/" target="_blank" class="socail-link"><i
+                                        class="fa-brands fa-youtube"></i></a></b></p>
+                        <p><b><a href="https://www.instagram.com/" target="_blank" class="socail-link"><i
+                                        class="fa-brands fa-instagram"></i></a></b></p>
+                    
+                    
+                    </div>
+                </div>
+                <div class="container  copy-right-text">
+                    <p>©<span id="year"></span> All rights reserved. Designed and Developed By , <a href="https://www.facebook.com/eh.emon3059/" target="_blank"> [Emon] </a>  </p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
 </body>
 
 

@@ -7,7 +7,7 @@ include_once("../smtp_stable/class.smtp.php");
 
 
 if(isset($_GET['user_id'])){
-  print  $user_id= $_GET['user_id'];
+    $user_id= $_GET['user_id'];
 }
 
 ?>
@@ -15,9 +15,7 @@ if(isset($_GET['user_id'])){
     <!-- Main Content Section Starts -->
 
         <br><br>
-                <!-- Notice Message -->
-                <h4 style="text-align: center;"> <span style="color:red;">NOTICE</span> -- if you reply this message customer send 
-                message will be Deleted from Database --</h5>
+        <h1 class="text-center">Reply Message</h1>
 
                 <?php 
                     //Query to Get all Admin `user_name``from_customer``mobile_num``message`
@@ -175,22 +173,5 @@ if(isset($_GET['user_id'])){
 
         
 
-
-
-<!-- Main Content Setion Ends -->
-
 <?php include('partials/footer.php') ?>
-<!-- <script>
-const form =document.getElementsByName("email-send-form");
-    form.addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent the form from submitting automatically
-    
-    const confirmed = confirm('Are you sure you want to submit this form?');
-    if (confirmed) {
-        form.submit(); // submit the form if user confirms
-    } else {
-        // do nothing if user cancels
-    }
-    });
-</script> -->
 

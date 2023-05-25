@@ -191,7 +191,10 @@
                         //A. Uploading New Image
 
                         //REname the Image
-                        $ext = end(explode('.', $image_name)); //Gets the extension of the image
+                       // $ext = end(explode('.', $image_name)); //Gets the extension of the image
+
+                        $tmp = explode('.', $image_name);
+                        $ext = end($tmp);
 
                         $image_name = "Food-Name-".rand(0000, 9999).'.'.$ext; //THis will be renamed image
 
@@ -266,13 +269,15 @@
                 {
                     //Query Exectued and Food Updated
                     $_SESSION['update'] = "<div class='success'>Food Updated Successfully.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-food.php' </script>";
+                   // header('location:'.SITEURL.'admin/manage-food.php');
                 }
                 else
                 {
                     //Failed to Update Food
                     $_SESSION['update'] = "<div class='error'>Failed to Update Food.</div>";
-                    header('location:'.SITEURL.'admin/manage-food.php');
+                    echo "<script> window.location.href = 'http://localhost/food-order/admin/manage-food.php' </script>";
+                   // header('location:'.SITEURL.'admin/manage-food.php');
                 }
 
                 

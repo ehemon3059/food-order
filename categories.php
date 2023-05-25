@@ -50,7 +50,7 @@
                                 ?>
                                 
 
-                                <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                                <h3 class="float-text explore_text"><?php echo $title; ?></h3>
                             </div>
                         </a>
 

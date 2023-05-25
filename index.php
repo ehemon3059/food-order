@@ -1,4 +1,4 @@
-    <?php include('partials-front/menu.php'); ?>
+    <?php include('partials-front/menu.php');  ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -69,7 +69,7 @@
                                 ?>
                                 
 
-                                <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                                <h3 class="float-text explore_text"><?php echo $title; ?></h3>
                             </div>
                         </a>
 
@@ -121,7 +121,7 @@
                     $description = $row['description'];
                     $image_name = $row['image_name'];
                     ?>
-
+                <form method="POST">
                     <div class="food-menu-box">
                         <div class="food-menu-img">
                             <?php 
@@ -144,16 +144,19 @@
 
                         <div class="food-menu-desc">
                             <h4><?php echo $title; ?></h4>
+                            <input type="hidden" name="title[]" value="<?php echo $title; ?>">
+                            <input type="hidden" name="id[]" value="<?php echo $id; ?>">
                             <p class="food-price">৳ <?php echo $price; ?></p>
                             <p class="food-detail">
                                 <?php echo $description; ?>
                             </p>
                             <br>
 
-                            <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                            <!-- <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a> -->
+                            <input type="submit" name="add_to_card" value="Add to cart" class="btn btn-primary">
                         </div>
                     </div>
-
+                </form>
                     <?php
                 }
             }
@@ -166,6 +169,42 @@
             ?>
 
             
+<?php
+            
+            if(isset($_POST['add_to_card'])){
+
+                include('partials-front/check-login.php');
+
+                $title =$_POST['title'];
+                $id =$_POST['id'];
+                $add_to_cart_date = date("Y-m-d h:i:sa"); //Order DAte
+                foreach ($id  as $value) {
+               
+                  //  echo '<script type="text/javascript">alert("'. $value  .' ");</script>';
+                  //  echo '<script type="text/javascript">alert("'. $order_user  .' ");</script>';
+
+
+                    $query = "INSERT INTO `tbl_cart`
+                    SET 
+                    `from_order` = '$order_user',
+                    `food_id` = '$value',
+
+                    `add_to_cart_date` = '$add_to_cart_date'";
+
+
+                    if (mysqli_query($conn, $query)) {
+                      
+                        echo '<script type="text/javascript">alert(" Food Added to cart successfully");</script>';
+                        echo "<script> window.location.href = 'http://localhost/food-order/foods.php' </script>";
+                    } else {
+                        echo "Error: " .  $query . "<br>" . mysqli_error($conn);
+                    }
+
+                }
+
+            }
+            
+            ?>
 
  
 
@@ -176,7 +215,7 @@
         </div>
 
         <p class="text-center">
-            <a href="#">See All Foods</a>
+            <a href="http://localhost/food-order/foods.php">See All Foods</a>
         </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->

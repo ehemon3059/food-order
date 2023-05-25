@@ -13,7 +13,7 @@ include('partials-front/check-login.php');
             $food_id = $_GET['food_id'];
 
             //Get the DEtails of the SElected Food
-            $sql = "SELECT * FROM tbl_food WHERE id=$food_id";
+          print  $sql = "SELECT * FROM tbl_food WHERE id=$food_id";
             //Execute the Query
             $res = mysqli_query($conn, $sql);
             //Count the rows
