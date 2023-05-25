@@ -125,9 +125,6 @@
                 $id =$_POST['id'];
                 $add_to_cart_date = date("Y-m-d h:i:sa"); //Order DAte
                 foreach ($id  as $value) {
-               
-                  //  echo '<script type="text/javascript">alert("'. $value  .' ");</script>';
-                  //  echo '<script type="text/javascript">alert("'. $order_user  .' ");</script>';
 
 
                     $query = "INSERT INTO `tbl_cart`

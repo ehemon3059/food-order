@@ -8,13 +8,13 @@ include('partials-front/check-login.php');
 
  if(isset($_GET['cart_id']))
  {
-     //Get the Food id and details of the selected food
+
      $cart_id = $_GET['cart_id'];
 
 
      $query23 ="DELETE FROM `tbl_cart` WHERE id = '$cart_id'";
      $result = mysqli_query($conn,$query23);
-     echo "<script> window.location.href = 'http://localhost/food-order/cart2.php' </script>";
+     echo "<script> window.location.href = 'http://localhost/food-order/cart.php' </script>";
  }
 
 
@@ -25,17 +25,11 @@ include('partials-front/check-login.php');
  
     $qty = $_POST['qty'];
 
-    // echo "<pre>";
-    // print_r($qty);
 
-    // die();
 
 $totalprice = 0;
 
-// echo "<pre>";
-// print_r($qty);
-// echo "</pre>";
-// die();
+
 
 // Loop through the arrays and insert the values into the database
 for ($i = 0; $i < count($food_name); $i++) {
@@ -217,30 +211,18 @@ for ($i = 0; $i < count($food_name); $i++) {
                                         
                                         
 
-                                        <a href="<?php echo SITEURL; ?>cart2.php?cart_id=<?php echo $cart_id; ?>" class="btn btn-primary">X</a>
+                                        <a href="<?php echo SITEURL; ?>cart.php?cart_id=<?php echo $cart_id; ?>" class="btn btn-primary">X</a>
                                         
 
-                                    </div>
-
-
-                                
+                                    </div>                                
 
                             <?php
       
 
                         }
 
-                    
-        
-                
-                    
-
-           
-        
                 
             }
-
-                
 
 
             ?>
@@ -256,48 +238,48 @@ for ($i = 0; $i < count($food_name); $i++) {
                 </label>
 
             
-         <!-- ///   <span class="total-amount text-center"> total </span> -->
+                 <!-- ///   <span class="total-amount text-center"> total </span> -->
 
-            <input type="hidden" name="product_total" class="total-price" value="">
-            <div class="container_order_form">
-                    <h1 class="confirm_order_h1">Confirm Order</h1>
-                
-                        <label for="fullname">Full Name</label>
-                        <input type="text" class="input_form"  name="full-name" required>
+                    <input type="hidden" name="product_total" class="total-price" value="">
+                    <div class="container_order_form">
+                        <h1 class="confirm_order_h1">Confirm Order</h1>
+                    
+                            <label for="fullname">Full Name</label>
+                            <input type="text" class="input_form"  name="full-name" required>
 
-                        <label for="phone">Phone Number</label>
-                        <input type="number" class="input_form" name="phone_number" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="number" class="input_form" name="phone_number" required>
 
-                        <label for="email">Email</label>
-                        <input type="email" class="input_form" name="cus_email" required>
+                            <label for="email">Email</label>
+                            <input type="email" class="input_form" name="cus_email" required>
 
-                        <label for="location">Select Location</label>
+                            <label for="location">Select Location</label>
 
-                        <?php
+                            <?php
 
-                    // Query the database
-                        $sql = "SELECT * FROM `service_area`";
-                        $result = mysqli_query($conn, $sql);
+                        // Query the database
+                            $sql = "SELECT * FROM `service_area`";
+                            $result = mysqli_query($conn, $sql);
 
-                        // Create the select option element
-                        echo "<select  id='select_location' name='options' class='input_form' required  >";
+                            // Create the select option element
+                            echo "<select  id='select_location' name='options' class='input_form' required  >";
+                            
+                            echo   "<option >Select an option</option>";
+                            // Loop through the query results and add each option to the select element
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row['area_name'] . "'>" . $row['area_name'] . "</option>";
+                            }
+
+                            // Close the select element
+                            echo "</select>";
+                            ?>
+
                         
-                        echo   "<option >Select an option</option>";
-                        // Loop through the query results and add each option to the select element
-                        while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<option value='" . $row['area_name'] . "'>" . $row['area_name'] . "</option>";
-                        }
+                            <label for="textarea">Address</label>
+                            <textarea class="input_form" name="cus_address" id="text_area_box" cols="30" rows="10"></textarea>
 
-                        // Close the select element
-                        echo "</select>";
-                        ?>
-
-                      
-                        <label for="textarea">Address</label>
-                        <textarea class="input_form" name="cus_address" id="text_area_box" cols="30" rows="10"></textarea>
-
-                        <button class=" confirm_btn" type="submit" name="continue_order">Continue order</button>
-                </div>
+                            <button class=" confirm_btn" type="submit" name="continue_order">Continue order</button>
+                    </div>
 
        
      
