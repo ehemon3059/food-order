@@ -465,7 +465,7 @@
 												
                         ?>
 
-                            <a href="cart2.php"> <i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                            <a href="cart.php"> <i class="fa-solid fa-cart-shopping"></i> Cart</a>
 
 							<?php
 								$sql = "SELECT COUNT(*) AS total FROM `tbl_cart` WHERE `from_order` = '$order_user'";
